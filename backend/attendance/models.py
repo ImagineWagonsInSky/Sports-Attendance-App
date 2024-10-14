@@ -6,6 +6,6 @@ class Session(models.Model):
     description = models.TextField()
 
 class Attendance(models.Model):
-    player = models.ForeignKey(User, on_delete=models.CASCADE)
+    player = models.CharField(max_length=100)
     session = models.ForeignKey(Session, on_delete=models.CASCADE)
     is_attending = models.BooleanField(default=False)
