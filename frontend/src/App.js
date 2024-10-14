@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import CustomCheckbox from './components/CustomCheckbox';
 
 function App() {
   const [sessions, setSessions] = useState([]);
@@ -47,10 +48,10 @@ function App() {
         <input type="text" value={player} onChange={e => setPlayer(e.target.value)} />
       </label>
 
-      <label>
-        Attending? 
-        <input type="checkbox" checked={isAttending} onChange={() => setIsAttending(!isAttending)} />
-      </label>
+      <CustomCheckbox 
+        isChecked={isAttending} 
+        onChange={() => setIsAttending(!isAttending)} 
+      />
 
       {/* Submit button */}
       <button onClick={handleAttendanceSubmit}>Submit</button>
