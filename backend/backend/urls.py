@@ -25,5 +25,5 @@ router.register(r'attendance', views.AttendanceViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('api/sessions/', views.get_sessions, name='get_sessions'),
 ]

@@ -7,14 +7,22 @@ function App() {
   const [isAttending, setIsAttending] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/sessions/')
-      .then(res => {
-        setSessions(res.data);
-      })
-      .catch(err => console.log(err));
+    const fetchSessions = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/sessions/'); 
+        const data = await response.json();
+        console.log(data)
+        setSessions(data);
+      } catch (error) {
+        console.error('Error fetching sessions:', error);
+      }
+    };
+
+    fetchSessions();
   }, []);
 
   const handleAttendanceSubmit = () => {
+    // Assuming your API endpoint remains the same
     axios.post('http://localhost:8000/api/attendance/', {
       session: selectedSession,
       is_attending: isAttending
@@ -29,8 +37,8 @@ function App() {
       <select onChange={e => setSelectedSession(e.target.value)}>
         <option>Select a session</option>
         {sessions.map(session => (
-          <option key={session.id} value={session.id}>
-            {session.description} - {new Date(session.date).toLocaleString()}
+          <option key={session.id} value={session.id}> 
+            {session.description} - {new Date(session.date).toLocaleString()} 
           </option>
         ))}
       </select>

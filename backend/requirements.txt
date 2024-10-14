@@ -27,6 +27,8 @@ decorator==5.1.1
 defer==1.0.4
 defusedxml==0.7.1
 Django==4.2.13
+django-cors-headers==4.0.0
+djangorestframework==3.14.0
 entrypoints==0.3
 exceptiongroup==1.2.0
 executing==2.0.1
@@ -97,6 +99,7 @@ prometheus-client==0.20.0
 prompt-toolkit==3.0.43
 protobuf==3.6.1
 psutil==5.5.1
+psycopg2==2.9.7 
 ptyprocess==0.7.0
 pure-eval==0.2.2
 PyAutoGUI==0.9.54
