@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CustomCheckbox from './components/CustomCheckbox';
+import './App.css'
 
 function App() {
   const [sessions, setSessions] = useState([]);
@@ -26,35 +27,40 @@ function App() {
     axios.post('http://localhost:8000/api/attendance/', {
       player: player,
       session: selectedSession,
-      is_attending: isAttending
-    }).then(res => {
-      alert('Attendance submitted!');
-    }).catch(err => console.log(err));
+      is_attending: isAttending,
+    })
+      .then(res => {
+        alert('Attendance submitted!');
+      })
+      .catch(err => console.log(err));
   };
 
   return (
-    <div>
-      <h1>Confirm Attendance</h1>
-      <select onChange={e => setSelectedSession(e.target.value)}>
-        <option>Select a session</option>
-        {sessions.map(session => (
-          <option key={session.id} value={session.id}>
-            {session.description} - {new Date(session.date).toLocaleString()}
-          </option>
-        ))}
-      </select>
-      <label>
-        Your name:
-        <input type="text" value={player} onChange={e => setPlayer(e.target.value)} />
-      </label>
-
-      <CustomCheckbox 
-        isChecked={isAttending} 
-        onChange={() => setIsAttending(!isAttending)} 
-      />
-
-      {/* Submit button */}
-      <button onClick={handleAttendanceSubmit}>Submit</button>
+    <div className="app-container">
+      <div className="centered-content">
+        <h1>Confirm Attendance</h1>
+        <select onChange={e => setSelectedSession(e.target.value)}>
+          <option>Select a session</option>
+          {sessions.map(session => (
+            <option key={session.id} value={session.id}>
+              {session.description} - {new Date(session.date).toLocaleString()}
+            </option>
+          ))}
+        </select>
+        <label>
+          <input
+            type="text"
+            value={player}
+            onChange={e => setPlayer(e.target.value)}
+            placeholder="Your name"
+          />
+        </label>
+        <CustomCheckbox
+          isChecked={isAttending}
+          onChange={() => setIsAttending(!isAttending)}
+        />
+        <button onClick={handleAttendanceSubmit}>Submit</button>
+      </div>
     </div>
   );
 }
