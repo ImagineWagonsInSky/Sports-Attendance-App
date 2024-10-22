@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/sessions/', views.get_sessions, name='get_sessions'),
     path('api/attendance/', views.register_attendance, name='register_attendance'),
+    path('api/sessionswithattendance/', views.get_sessions_with_attendance, name='get_sessions_with_attendance'),
 ]

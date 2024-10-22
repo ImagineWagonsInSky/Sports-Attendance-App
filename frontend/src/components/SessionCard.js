@@ -2,10 +2,10 @@ import React from "react";
 import './SessionCard.css';
 
 const SessionCard = ({ session }) => {
-    const { title, date, attendees, totalResponses} = session;
+    const { description, date, attendees, totalResponses} = session;
     return (
-        <div class="sessioncard">
-            <h2>{title}</h2>
+        <div className="sessioncard">
+            <h2>{description}</h2>
             <p>Date: {new Date(date).toLocaleString()}</p>
             <p>Attendance: {attendees} / {totalResponses}</p>
         </div>

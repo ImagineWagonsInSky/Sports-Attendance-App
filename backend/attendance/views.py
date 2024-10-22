@@ -31,3 +31,26 @@ def register_attendance(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+def get_sessions_with_attendance(request):
+    try:
+        sessions = Session.objects.all()
+        session_data = []
+
+        for session in sessions:
+            # Get total number of responses for the session
+            total_responses = Attendance.objects.filter(session=session).count()
+
+            # Get number of attendees (those who are attending)
+            attendees = Attendance.objects.filter(session=session, is_attending=True).count()
+
+            session_info = SessionSerializer(session).data
+            session_info['totalResponses'] = total_responses
+            session_info['attendees'] = attendees
+            session_data.append(session_info)
+
+        return Response(session_data)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
