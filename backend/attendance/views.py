@@ -64,3 +64,12 @@ def get_session_by_id(request, session_id):
     
     except Session.DoesNotExist:
         return Response({'error': 'Session not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['POST'])
+def create_session(request):
+    serializer = SessionSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
