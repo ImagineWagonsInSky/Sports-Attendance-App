@@ -54,3 +54,13 @@ def get_sessions_with_attendance(request):
         return Response(session_data)
     except Exception as e:
         return Response({'error': str(e)}, status=500)
+
+@api_view(['GET'])
+def get_session_by_id(request, session_id):
+    try:
+        session = Session.objects.get(id=session_id)
+        serializer = SessionSerializer(session)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    except Session.DoesNotExist:
+        return Response({'error': 'Session not found'}, status=status.HTTP_404_NOT_FOUND)

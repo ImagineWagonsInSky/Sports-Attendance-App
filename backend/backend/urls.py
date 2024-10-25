@@ -28,4 +28,5 @@ urlpatterns = [
     path('api/sessions/', views.get_sessions, name='get_sessions'),
     path('api/attendance/', views.register_attendance, name='register_attendance'),
     path('api/sessionswithattendance/', views.get_sessions_with_attendance, name='get_sessions_with_attendance'),
+    path('api/sessions/<int:session_id>/', views.get_session_by_id, name='get_session_by_id'),
 ]
