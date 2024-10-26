@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import SessionCard from '../components/SessionCard';
+import AddSessionButton from '../components/AddSessionButton';
+import './Dashboard.css';
 
 function Dashboard() {
     const [sessions, setSessions] = useState([]);
@@ -17,19 +19,21 @@ function Dashboard() {
     
         fetchSessions();
       }, []);
-    return (
-        <div>
-      <h1>Upcoming Sessions</h1>
-      <div className="session-list">
-        {sessions.map((session) => (
-          <SessionCard 
-            key={session.id} 
-            session={session}  // Pass the session data as props to SessionCard
-          />
-        ))}
-      </div>
-    </div>
-    );
-};
+      return (
+        <div className="dashboard">
+          <div className="header">
+            <h2>Upcoming Sessions</h2>
+            <div className='add-session-button'>
+              <AddSessionButton></AddSessionButton>
+            </div>
+          </div>
+          <div className="session-list">
+            {sessions.map((session) => (
+              <SessionCard key={session.id} session={session} />
+            ))}
+          </div>
+        </div>
+      );
+    };
 
 export default Dashboard;

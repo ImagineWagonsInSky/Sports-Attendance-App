@@ -1,0 +1,33 @@
+.dashboard {
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #1454a7;
+    font-size: 35px;
+  }
+  
+  .add-session-button {
+    padding: 8px 12px;
+    background-color: white;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-session-button:hover {
+    background-color: #45a049;
+  }
+  
+  .session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
