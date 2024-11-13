@@ -3,9 +3,14 @@ import axios from 'axios';
 import SessionCard from '../components/SessionCard';
 import AddSessionButton from '../components/AddSessionButton';
 import './Dashboard.css';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
     const [sessions, setSessions] = useState([]);
+    const navigate = useNavigate();
+    const handleAddSession = () => {
+      navigate('/add-session');
+    };
 
     useEffect(() => {
         const fetchSessions = async () => {
@@ -24,7 +29,9 @@ function Dashboard() {
           <div className="header">
             <h2>Upcoming Sessions</h2>
             <div className='add-session-button'>
-              <AddSessionButton></AddSessionButton>
+              <button onClick={handleAddSession}>
+                <AddSessionButton></AddSessionButton>
+              </button>
             </div>
           </div>
           <div className="session-list">
