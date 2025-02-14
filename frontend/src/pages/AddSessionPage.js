@@ -6,7 +6,8 @@ const AddSessionPage = () => {
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
 
-    const handleAddSession = () => {
+    const handleAddSession = (event) => {
+        event.preventDefault();
         axios.post('http://localhost:8000/api/sessions/create/', {
             date: date,
             description: description,
@@ -20,7 +21,7 @@ const AddSessionPage = () => {
         <div>
             <text>This is the adding session page</text>
             <div>
-                <form>
+                <form onSubmit={handleAddSession}>
                     <label>Date:
                         <input
                             type="datetime-local"
@@ -35,7 +36,7 @@ const AddSessionPage = () => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </label>
-                    <button onClick={handleAddSession}>Add Session</button>
+                    <button type="submit">Add Session</button>
                 </form>
             </div>
         </div>
