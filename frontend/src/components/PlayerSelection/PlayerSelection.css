@@ -1,0 +1,47 @@
+.player-selection-section {
+    width: 40%;
+    padding: 0 1.5rem;
+  }
+  
+  .player-slot {
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  
+  .player-slot-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .player-slot-position {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  
+  .select-as-starter {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  
+  .select-btn {
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.4rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 1200px) {
+    .player-selection-section {
+      width: 100%;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }

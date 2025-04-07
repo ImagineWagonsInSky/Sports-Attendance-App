@@ -1,0 +1,82 @@
+.bench-section {
+    width: 32%;
+    padding-left: 1.5rem;
+  }
+  
+  .bench-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .bench-player {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .player-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 1rem;
+    position: relative;
+  }
+  
+  .status-indicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .status-indicator.available {
+    background-color: var(--success);
+  }
+  
+  .status-indicator.injured {
+    background-color: var(--danger);
+  }
+  
+  .status-indicator.unavailable {
+    background-color: var(--text-muted);
+  }
+  
+  .status-indicator.warming {
+    background-color: var(--warning);
+  }
+  
+  .player-info {
+    flex: 1;
+  }
+  
+  .bench-player-name {
+    font-weight: 500;
+  }
+  
+  .bench-player-status {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  .bench-player-status.injured {
+    color: var(--danger);
+  }
+  
+  .bench-player-time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  @media (max-width: 1200px) {
+    .bench-section {
+      width: 100%;
+      padding: 1rem 0;
+      border-right: none;
+    }
+  }

@@ -1,0 +1,55 @@
+.player-list-section {
+    width: 28%;
+    border-right: 1px solid var(--border-color);
+    padding-right: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .player-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .player-item {
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+  }
+  
+  .player-name {
+    font-weight: 500;
+  }
+  
+  .player-position, .player-status {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  .player-status.injured {
+    color: var(--danger);
+  }
+  
+  .player-status.resting {
+    color: var(--warning);
+  }
+  
+  .player-status.active {
+    color: var(--success);
+  }
+  
+  @media (max-width: 1200px) {
+    .player-list-section {
+      width: 100%;
+      border-right: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+  
