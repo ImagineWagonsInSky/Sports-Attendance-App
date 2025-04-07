@@ -1,0 +1,49 @@
+.session-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: sans-serif;
+  }
+  
+  .session-header {
+    margin-bottom: 20px;
+  }
+  
+  .session-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .session-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .session-details p {
+    margin-bottom: 10px;
+  }
+  
+  .session-details strong {
+    font-weight: bold;
+  }
+  
+  .match-details{
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      margin-top: 20px;
+  }
+  
+  .loading, .error, .not-found {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      margin-top: 10px;
+  }
+  
+  .error{
+      color: red;
+      border-color: red;
+  }
