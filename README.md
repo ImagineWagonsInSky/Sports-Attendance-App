@@ -1,6 +1,6 @@
-# Rugby-Attendance-App
+# Sports-Attendance-App
 
-Welcome to the **Rugby-Attendance-App**! This app helps rugby teams, or any sports teams, register attendance and keep track of player availability for upcoming sessions and games. Developed for efficient team management, this app is in its early stages and currently focuses on basic attendance features, so stay tuned for more updates.
+Welcome to the **Sports-Attendance-App**! This app helps rugby teams, or any sports teams, register attendance and keep track of player availability for upcoming sessions and games. Developed for efficient team management, this app is in its early stages and currently focuses on basic attendance features, so stay tuned for more updates.
 
 ## 🌟 Features
 
